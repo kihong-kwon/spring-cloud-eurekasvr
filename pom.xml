@@ -87,7 +87,7 @@
                             <outputDirectory>${project.basedir}/target/dockerfile</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.basedir}/src/main/docker</directory>
+                                    <directory>src/main/Docker</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
