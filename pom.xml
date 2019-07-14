@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>springcloudeurekasvr</artifactId>
+    <artifactId>spring-cloud-eurekasvr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-eurekasvr</name>
     <description>Demo project for Spring Boot</description>
@@ -63,7 +63,8 @@
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.example.springcloudeurekasvr.SpringCloudEurekasvrApplication</start-class>
-        <docker.image.name>spring-cloud-eurekasvr</docker.image.name>
+        <docker.image.name>yano3000/spring-cloud-eurekasvr</docker.image.name>
+        <docker.image.tag>${env.BUILD_NAME}</docker.image.tag>
     </properties>
 
     <build>
@@ -100,7 +101,7 @@
                 <version>1.2.0</version>
 
                 <configuration>
-                    <imageName>${docker.image.name}</imageName>
+                    <imageName>${docker.image.name}:${docker.image.tag}</imageName>
                     <dockerDirectory>${project.basedir}/target/dockerfile</dockerDirectory>
                     <resources>
                         <resource>
